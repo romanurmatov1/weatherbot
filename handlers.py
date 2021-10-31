@@ -30,7 +30,7 @@ async def echo(message: Message):
       format = "%d-%m-%Y"
       format1 = "%H:%M"
       noww1 = datetime.now()
-      noww = datetime.timedelta(hours=5)
+      noww = noww1.timedelta(hours=5)
       time = noww.hour
       now_utc = datetime.now(timezone('UTC'))
       now_asia = now_utc.astimezone(timezone('Asia/Tashkent'))
