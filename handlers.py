@@ -24,11 +24,12 @@ async def echo(message: Message):
       res = requests.get(
          f'https://www.google.com/search?q=urganch weather&oq=urganch weather&aqs=chrome.0.35i39l2j0l4j46j69i60.6128j1j7&sourceid=chrome&ie=UTF-8', headers=headers)
       soup = BeautifulSoup(res.text, 'html.parser')
-      time = soup.select('#wob_dts')[0].getText().strip()
+#       time = soup.select('#wob_dts')[0].getText().strip()
       info = soup.select('#wob_dc')[0].getText().strip()
       weather = round((int(soup.select('#wob_tm')[0].getText().strip())-32)*(5/9))
       format = "%d-%m-%Y"
       format1 = "%H:%M"
+      time = "%H:00"
       now_utc = datetime.now(timezone('UTC'))
       now_asia = now_utc.astimezone(timezone('Asia/Tashkent'))
       sana = now_asia.strftime(format)
