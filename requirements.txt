@@ -3,4 +3,6 @@ aiogram
 config
 dnspython
 bs4
+datetime
 pytz
+requests
