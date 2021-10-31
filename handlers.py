@@ -2,7 +2,7 @@ from app import bot, dp
 from config import admin_id
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, timedelta
 from pytz import timezone
 
 from aiogram.types import Message
