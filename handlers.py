@@ -16,6 +16,8 @@ async def echo(message: Message):
    text = message.text
    if text == '/start':
       await bot.send_message(chat_id=chat_id, text="Iltimos bir nima deb yozing!")
+   elif text == '/admin' or text == '/help':
+      await bot.send_message(chat_id=chat_id, text="<b>👤Admin: @xc_ho @ufo_607 . <pre>(24 soat ichida javob kelmasa qayta yozing <i>:)</i>)</pre>\n\n🤖Kanalimiz: @ufobots</b>", parse_mode='HTML')
    else:
       headers = {
          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
