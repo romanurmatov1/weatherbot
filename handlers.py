@@ -29,8 +29,7 @@ async def echo(message: Message):
       weather = round((int(soup.select('#wob_tm')[0].getText().strip())-32)*(5/9))
       format = "%d-%m-%Y"
       format1 = "%H:%M"
-      time1 = "%H"
-      time = time1 +":00"
+      time = format.replace(minute = "00")
       now_utc = datetime.now(timezone('UTC'))
       now_asia = now_utc.astimezone(timezone('Asia/Tashkent'))
       sana = now_asia.strftime(format)
