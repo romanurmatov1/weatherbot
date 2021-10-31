@@ -29,11 +29,12 @@ async def echo(message: Message):
       weather = round((int(soup.select('#wob_tm')[0].getText().strip())-32)*(5/9))
       format = "%d-%m-%Y"
       format1 = "%H:%M"
-      time = format.replace(minute = "00")
+      noww = datetime.now()
+      time = noww.hour
       now_utc = datetime.now(timezone('UTC'))
       now_asia = now_utc.astimezone(timezone('Asia/Tashkent'))
       sana = now_asia.strftime(format)
       soat = now_asia.strftime(format1)
-      await bot.send_message(chat_id=chat_id, text=f"<b>🏙Hudud: <i>Xorazm viloyati</i>\n\n📅Sana: <i>{sana}</i>\n\n⌚️Soat: <i>{soat}</i>\n\n🌡Havo harorati: <i>{weather}°C</i>\n\n🕐Yangilangan vaqt: <i>{time}</i></b>", parse_mode='HTML')
+      await bot.send_message(chat_id=chat_id, text=f"<b>🏙Hudud: <i>Xorazm viloyati</i>\n\n📅Sana: <i>{sana}</i>\n\n⌚️Soat: <i>{soat}</i>\n\n🌡Havo harorati: <i>{weather}°C</i>\n\n🕐Yangilangan vaqt: <i>{time}:00</i></b>", parse_mode='HTML')
    
    # await message.answer(text=text)
